@@ -14,8 +14,8 @@ const authMiddleware = require("../middleware/authMiddleware");
 
 // ✅ Protected routes using your authMiddleware
 router.get("/stats", authMiddleware, getStats);
-router.get("/blogs", authMiddleware, getAllBlogs);
-router.get("/blogs/:id", authMiddleware, getBlogById);
+router.get("/blogs", getAllBlogs);
+router.get("/blogs/:id", getBlogById);
 router.post("/blogs", authMiddleware, addBlog);
 router.put("/blogs/:id", authMiddleware, updateBlog);
 router.delete("/blogs/:id", authMiddleware, deleteBlog);

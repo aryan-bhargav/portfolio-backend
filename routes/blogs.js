@@ -17,7 +17,6 @@ const router = express.Router();
 router.get("/", getAllBlogs);
 router.get("/:id", getBlogById);
 
-// ✍️ Protected Routes (requires authentication)
 router.post("/", auth, createBlog);
 router.put("/:id", auth, updateBlog);
 router.delete("/:id", auth, deleteBlog);
