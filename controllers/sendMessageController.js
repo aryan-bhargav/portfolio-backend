@@ -21,7 +21,6 @@ const sendMessage = async (req, res) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    console.log(`📨 Message sent by ${email}`);
     res.status(200).send("Message sent");
   } catch (error) {
     console.error("❌ Failed to send email:", error);
