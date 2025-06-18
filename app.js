@@ -14,6 +14,9 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
 
+
+// app.use("/",(req,res)=>{res.json({message:"Backend is working"})})
+app.use("/api/contactMe",require("./routes/sendMessage"))
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/blogs", require("./routes/blogs"));
 app.use("/api/admin" ,require("./routes/admin"))
